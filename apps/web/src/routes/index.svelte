@@ -139,4 +139,8 @@
 	#skip-button {
 		background-color: rgb(151, 151, 149);
 	}
+
+	#submit-button:active, #skip-button:active, #play-button:active, #pause-button:active {
+		transform: scale(0.98);
+	}
 </style>
