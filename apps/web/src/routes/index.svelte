@@ -1,12 +1,19 @@
 <script lang="ts">
 	let isPlayed: boolean = false;
+	let answer: string = "";
+
 	const turnPlay = (): boolean => {
 		isPlayed = true;
 		return isPlayed;
 	};
+
 	const turnPause = (): boolean => {
 		isPlayed = false;
 		return isPlayed;
+	};
+
+	const handleAnswer = (): void => {
+		console.log(answer);
 	};
 </script>
 
@@ -55,13 +62,15 @@
 	</section>
 	<section id="form-answer">
 		<div id="answer-input">
-			<input type="text" name="answer" id="answer">
+			<input type="text" name="answer" id="answer" bind:value={answer}>
 		</div>
-		<div id="skip-button">
-			Skip
-		</div>
-		<div id="submit-button">
-			Submit
+		<div id="answer-button">
+			<div id="skip-button">
+				Skip
+			</div>
+			<div id="submit-button" on:click={handleAnswer}>
+				Submit
+			</div>
 		</div>
 	</section>
 </main>
@@ -107,7 +116,13 @@
 	}
 
 	#form-answer {
-		display: flex;
+		/* display: flex; */
+		margin: 20px auto;
+	}
+
+	#answer-input {
+		/* margin: 0 auto; */
+		text-align: center;
 	}
 
 	#answer {
@@ -118,7 +133,12 @@
 		margin: 10px auto;
 	}
 
+	#answer-button {
+		display: flex;
+	}
+
 	#submit-button, #skip-button {
+		/* display: flex; */
 		border: 2px solid black;
 		border-radius: 30px;
 		width: 5%;
