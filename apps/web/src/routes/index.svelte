@@ -2,6 +2,8 @@
 	let isPlayed: boolean = false;
 	let answer: string = "";
 
+	let answerlist: string[] = [];
+
 	const turnPlay = (): boolean => {
 		isPlayed = true;
 		return isPlayed;
@@ -13,7 +15,12 @@
 	};
 
 	const handleAnswer = (): void => {
-		console.log(answer);
+		if(answerlist.length < 6) {
+			answerlist.push(answer);
+		} else {
+			alert("You can\'t add new song to the box.");
+		}
+		console.log(answerlist);
 	};
 </script>
 
@@ -29,22 +36,22 @@
 	</header>
 	<hr>
 	<section id="list-answer">
-		
+		{answerlist[0] !== undefined ? answerlist[0] : ""}
 	</section>
 	<section id="list-answer">
-		
+		{answerlist[1] !== undefined ? answerlist[1] : ""}
 	</section>
 	<section id="list-answer">
-		
+		{answerlist[2] !== undefined ? answerlist[2] : ""}
 	</section>
 	<section id="list-answer">
-		
+		{answerlist[3] !== undefined ? answerlist[3] : ""}
 	</section>
 	<section id="list-answer">
-		
+		{answerlist[4] !== undefined ? answerlist[4] : ""}
 	</section>
 	<section id="list-answer">
-		
+		{answerlist[5] !== undefined ? answerlist[5] : ""}
 	</section>
 	<section id="controller">
 		<div id="timeline">
